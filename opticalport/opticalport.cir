@@ -1,0 +1,13 @@
+.title KiCad schematic
+.include "/home/ejb/spice_models/APTD3216P3C-P22.lib"
+.include "/home/ejb/spice_models/BC817-40.lib"
+.include "/home/ejb/spice_models/OSRAM-IR-CHIPLED.lib"
+XQ2 Net-_D1-Pad1_ Net-_Q2-Pad1_ 0 BC817-40
+R4 Net-_Q2-Pad1_ 0 1.5K
+R2 +3V3 Net-_D1-Pad2_ 100
+R3 Net-_Q2-Pad1_ TX2 4.7K
+D1 Net-_D1-Pad1_ Net-_D1-Pad2_ SFH4043
+VJ1 +3V3 0 dc 3.3
+Vin1 TX2 0 pulse(0 3.3 0.1u 0.1u 0.1u 1u 2u)
+.tran 10n 4u 
+.end

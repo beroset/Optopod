@@ -1,0 +1,531 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Opticalport"
+Date "2021-02-27"
+Rev "0.1"
+Comp "E. Beroset"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_BJT:BC817 Q2
+U 1 1 603A974A
+P 5900 2950
+F 0 "Q2" H 6091 2996 50  0000 L CNN
+F 1 "BC817" H 6091 2905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6100 2875 50  0001 L CIN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BC817_SER.pdf" H 5900 2950 50  0001 L CNN
+F 4 "X" H 5900 2950 50  0001 C CNN "Spice_Primitive"
+F 5 "BC817-40" H 5900 2950 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5900 2950 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/BC817-40.lib" H 5900 2950 50  0001 C CNN "Spice_Lib_File"
+F 8 "3,1,2" H 5900 2950 50  0001 C CNN "Spice_Node_Sequence"
+	1    5900 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R4
+U 1 1 603AAE37
+P 5450 3100
+F 0 "R4" H 5518 3146 50  0000 L CNN
+F 1 "1.5k" H 5518 3055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5450 3100 50  0001 C CNN
+F 3 "~" H 5450 3100 50  0001 C CNN
+	1    5450 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R3
+U 1 1 603ACD54
+P 5050 2950
+F 0 "R3" V 4845 2950 50  0000 C CNN
+F 1 "4.7k" V 4936 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5050 2950 50  0001 C CNN
+F 3 "~" H 5050 2950 50  0001 C CNN
+	1    5050 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R1
+U 1 1 603AE044
+P 3350 1800
+F 0 "R1" H 3418 1846 50  0000 L CNN
+F 1 "2.2K" H 3418 1755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3350 1800 50  0001 C CNN
+F 3 "~" H 3350 1800 50  0001 C CNN
+F 4 "R" H 3350 1800 50  0001 C CNN "Spice_Primitive"
+F 5 "22K" H 3350 1800 50  0001 C CNN "Spice_Model"
+F 6 "N" H 3350 1800 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3350 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_Photo_NPN_EC Q1
+U 1 1 603AFAFC
+P 3250 2400
+F 0 "Q1" H 3440 2446 50  0000 L CNN
+F 1 "APTD3216P3C-P22" H 3440 2355 50  0000 L CNN
+F 2 "opticalport:LED_Kingbright_APTD3216" H 3450 2500 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216P3C-P22.pdf" H 3250 2400 50  0001 C CNN
+F 4 "/home/ejb/spice_models/APTD3216P3C-P22.lib" H 3250 2400 50  0001 C CNN "Spice_Lib_File"
+F 5 "APTD3216P3C-P22" H 3250 2400 50  0001 C CNN "Spice_Model"
+F 6 "Q" H 3250 2400 50  0001 C CNN "Spice_Primitive"
+F 7 "N" H 3250 2400 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3250 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 2150 6000 2300
+Wire Wire Line
+	6000 2600 6000 2750
+Wire Wire Line
+	5700 2950 5450 2950
+Wire Wire Line
+	5450 2950 5450 3000
+Wire Wire Line
+	5150 2950 5450 2950
+Connection ~ 5450 2950
+$Comp
+L power:GND #PWR03
+U 1 1 603BE0D5
+P 3350 2700
+F 0 "#PWR03" H 3350 2450 50  0001 C CNN
+F 1 "GND" H 3355 2527 50  0000 C CNN
+F 2 "" H 3350 2700 50  0001 C CNN
+F 3 "" H 3350 2700 50  0001 C CNN
+	1    3350 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR02
+U 1 1 603BF9A7
+P 6000 1800
+F 0 "#PWR02" H 6000 1650 50  0001 C CNN
+F 1 "+3V3" H 6015 1973 50  0000 C CNN
+F 2 "" H 6000 1800 50  0001 C CNN
+F 3 "" H 6000 1800 50  0001 C CNN
+	1    6000 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR01
+U 1 1 603BFEC7
+P 3350 1550
+F 0 "#PWR01" H 3350 1400 50  0001 C CNN
+F 1 "+3V3" H 3365 1723 50  0000 C CNN
+F 2 "" H 3350 1550 50  0001 C CNN
+F 3 "" H 3350 1550 50  0001 C CNN
+	1    3350 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1550 3350 1700
+Wire Wire Line
+	6000 1800 6000 1950
+$Comp
+L power:GND #PWR05
+U 1 1 603C1286
+P 5450 3300
+F 0 "#PWR05" H 5450 3050 50  0001 C CNN
+F 1 "GND" H 5455 3127 50  0000 C CNN
+F 2 "" H 5450 3300 50  0001 C CNN
+F 3 "" H 5450 3300 50  0001 C CNN
+	1    5450 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3300 5450 3200
+Wire Wire Line
+	3350 2600 3350 2700
+$Comp
+L power:GND #PWR07
+U 1 1 603C4FFF
+P 1200 3450
+F 0 "#PWR07" H 1200 3200 50  0001 C CNN
+F 1 "GND" H 1205 3277 50  0000 C CNN
+F 2 "" H 1200 3450 50  0001 C CNN
+F 3 "" H 1200 3450 50  0001 C CNN
+	1    1200 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:BC817 Q4
+U 1 1 603E3EBA
+P 5950 5750
+F 0 "Q4" H 6141 5796 50  0000 L CNN
+F 1 "BC817" H 6141 5705 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6150 5675 50  0001 L CIN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BC817_SER.pdf" H 5950 5750 50  0001 L CNN
+F 4 "X" H 5950 5750 50  0001 C CNN "Spice_Primitive"
+F 5 "BC817-40" H 5950 5750 50  0001 C CNN "Spice_Model"
+F 6 "N" H 5950 5750 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/BC817-40.lib" H 5950 5750 50  0001 C CNN "Spice_Lib_File"
+	1    5950 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R8
+U 1 1 603E4022
+P 5500 5900
+F 0 "R8" H 5568 5946 50  0000 L CNN
+F 1 "1.5K" H 5568 5855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5500 5900 50  0001 C CNN
+F 3 "~" H 5500 5900 50  0001 C CNN
+F 4 "R" H 5500 5900 50  0001 C CNN "Spice_Primitive"
+F 5 "1.5K" H 5500 5900 50  0001 C CNN "Spice_Model"
+F 6 "N" H 5500 5900 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5500 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R6
+U 1 1 603E402C
+P 6050 4850
+F 0 "R6" H 6118 4896 50  0000 L CNN
+F 1 "100" H 6118 4805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6050 4850 50  0001 C CNN
+F 3 "~" H 6050 4850 50  0001 C CNN
+F 4 "R" H 6050 4850 50  0001 C CNN "Spice_Primitive"
+F 5 "100" H 6050 4850 50  0001 C CNN "Spice_Model"
+F 6 "N" H 6050 4850 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    6050 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R7
+U 1 1 603E4036
+P 5100 5750
+F 0 "R7" V 4895 5750 50  0000 C CNN
+F 1 "4.7K" V 4986 5750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5100 5750 50  0001 C CNN
+F 3 "~" H 5100 5750 50  0001 C CNN
+F 4 "R" H 5100 5750 50  0001 C CNN "Spice_Primitive"
+F 5 "4.7K" H 5100 5750 50  0001 C CNN "Spice_Model"
+F 6 "N" H 5100 5750 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5100 5750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 603E4040
+P 6050 5250
+F 0 "D2" V 6089 5132 50  0000 R CNN
+F 1 "APTD3216F3C-P22" V 5998 5132 50  0000 R CNN
+F 2 "opticalport:LED_Kingbright_APTD3216" H 6050 5250 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6050 5250 50  0001 C CNN
+F 4 "D" H 6050 5250 50  0001 C CNN "Spice_Primitive"
+F 5 "SFH4043" H 6050 5250 50  0001 C CNN "Spice_Model"
+F 6 "N" H 6050 5250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/OSRAM-IR-CHIPLED.lib" H 6050 5250 50  0001 C CNN "Spice_Lib_File"
+F 8 "2,1" H 6050 5250 50  0001 C CNN "Spice_Node_Sequence"
+	1    6050 5250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small_US R5
+U 1 1 603E404A
+P 3400 4400
+F 0 "R5" H 3468 4446 50  0000 L CNN
+F 1 "2.2K" H 3468 4355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3400 4400 50  0001 C CNN
+F 3 "~" H 3400 4400 50  0001 C CNN
+F 4 "R" H 3400 4400 50  0001 C CNN "Spice_Primitive"
+F 5 "22K" H 3400 4400 50  0001 C CNN "Spice_Model"
+F 6 "N" H 3400 4400 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3400 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_Photo_NPN_EC Q3
+U 1 1 603E4054
+P 3300 5000
+F 0 "Q3" H 3490 5046 50  0000 L CNN
+F 1 "APTD3216P3C-P22" H 3490 4955 50  0000 L CNN
+F 2 "opticalport:LED_Kingbright_APTD3216" H 3500 5100 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216P3C-P22.pdf" H 3300 5000 50  0001 C CNN
+F 4 "/home/ejb/spice_models/APTD3216P3C-P22.lib" H 3300 5000 50  0001 C CNN "Spice_Lib_File"
+F 5 "APTD3216P3C-P22" H 3300 5000 50  0001 C CNN "Spice_Model"
+F 6 "Q" H 3300 5000 50  0001 C CNN "Spice_Primitive"
+F 7 "N" H 3300 5000 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    3300 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 4950 6050 5100
+Wire Wire Line
+	6050 5400 6050 5550
+Wire Wire Line
+	5750 5750 5500 5750
+Wire Wire Line
+	5500 5750 5500 5800
+Wire Wire Line
+	5200 5750 5500 5750
+Connection ~ 5500 5750
+$Comp
+L power:GND #PWR012
+U 1 1 603E4065
+P 3400 5300
+F 0 "#PWR012" H 3400 5050 50  0001 C CNN
+F 1 "GND" H 3405 5127 50  0000 C CNN
+F 2 "" H 3400 5300 50  0001 C CNN
+F 3 "" H 3400 5300 50  0001 C CNN
+	1    3400 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 603E406F
+P 6050 6100
+F 0 "#PWR014" H 6050 5850 50  0001 C CNN
+F 1 "GND" H 6055 5927 50  0000 C CNN
+F 2 "" H 6050 6100 50  0001 C CNN
+F 3 "" H 6050 6100 50  0001 C CNN
+	1    6050 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR011
+U 1 1 603E4079
+P 6050 4600
+F 0 "#PWR011" H 6050 4450 50  0001 C CNN
+F 1 "+3V3" H 6065 4773 50  0000 C CNN
+F 2 "" H 6050 4600 50  0001 C CNN
+F 3 "" H 6050 4600 50  0001 C CNN
+	1    6050 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR08
+U 1 1 603E4083
+P 3400 4150
+F 0 "#PWR08" H 3400 4000 50  0001 C CNN
+F 1 "+3V3" H 3415 4323 50  0000 C CNN
+F 2 "" H 3400 4150 50  0001 C CNN
+F 3 "" H 3400 4150 50  0001 C CNN
+	1    3400 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 4150 3400 4300
+Wire Wire Line
+	6050 4600 6050 4750
+Wire Wire Line
+	6050 5950 6050 6100
+$Comp
+L power:GND #PWR013
+U 1 1 603E4090
+P 5500 6100
+F 0 "#PWR013" H 5500 5850 50  0001 C CNN
+F 1 "GND" H 5505 5927 50  0000 C CNN
+F 2 "" H 5500 6100 50  0001 C CNN
+F 3 "" H 5500 6100 50  0001 C CNN
+	1    5500 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 6100 5500 6000
+Wire Wire Line
+	3400 5200 3400 5300
+Wire Wire Line
+	1200 3200 1200 3450
+Wire Wire Line
+	2150 3000 2150 2700
+$Comp
+L power:+3V3 #PWR04
+U 1 1 603C4A82
+P 2150 2700
+F 0 "#PWR04" H 2150 2550 50  0001 C CNN
+F 1 "+3V3" H 2165 2873 50  0000 C CNN
+F 2 "" H 2150 2700 50  0001 C CNN
+F 3 "" H 2150 2700 50  0001 C CNN
+	1    2150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 60408702
+P 1300 4350
+F 0 "#FLG01" H 1300 4425 50  0001 C CNN
+F 1 "PWR_FLAG" H 1300 4523 50  0000 C CNN
+F 2 "" H 1300 4350 50  0001 C CNN
+F 3 "~" H 1300 4350 50  0001 C CNN
+	1    1300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 6040E656
+P 1800 4500
+F 0 "#FLG02" H 1800 4575 50  0001 C CNN
+F 1 "PWR_FLAG" H 1800 4673 50  0000 C CNN
+F 2 "" H 1800 4500 50  0001 C CNN
+F 3 "~" H 1800 4500 50  0001 C CNN
+	1    1800 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3V3 #PWR09
+U 1 1 6040F07A
+P 1800 4350
+F 0 "#PWR09" H 1800 4200 50  0001 C CNN
+F 1 "+3V3" H 1815 4523 50  0000 C CNN
+F 2 "" H 1800 4350 50  0001 C CNN
+F 3 "" H 1800 4350 50  0001 C CNN
+	1    1800 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 60413F11
+P 1300 4500
+F 0 "#PWR010" H 1300 4250 50  0001 C CNN
+F 1 "GND" H 1305 4327 50  0000 C CNN
+F 2 "" H 1300 4500 50  0001 C CNN
+F 3 "" H 1300 4500 50  0001 C CNN
+	1    1300 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 4500 1300 4350
+Wire Wire Line
+	1800 4500 1800 4350
+Wire Wire Line
+	1400 3200 1200 3200
+Wire Wire Line
+	1900 3000 2150 3000
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 603C3473
+P 1600 3100
+F 0 "J1" H 1650 3417 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 1650 3326 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Horizontal" H 1600 3100 50  0001 C CNN
+F 3 "~" H 1600 3100 50  0001 C CNN
+F 4 "V" H 1600 3100 50  0001 C CNN "Spice_Primitive"
+F 5 "dc 3.3" H 1600 3100 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 1600 3100 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2,5" H 1600 3100 50  0001 C CNN "Spice_Node_Sequence"
+	1    1600 3100
+	1    0    0    -1  
+$EndComp
+Text GLabel 1400 3100 0    50   Input ~ 0
+TX2
+Text GLabel 1900 3100 2    50   Input ~ 0
+RX1
+Text GLabel 1900 3200 2    50   Input ~ 0
+TX1
+$Comp
+L pspice:VSOURCE Vin1
+U 1 1 60413706
+P 8400 2600
+F 0 "Vin1" H 8628 2646 50  0000 L CNN
+F 1 "pulse(0 3.3 0.1u 0.1u 0.1u 1u 2u)" H 8628 2555 50  0000 L CNN
+F 2 "" H 8400 2600 50  0001 C CNN
+F 3 "~" H 8400 2600 50  0001 C CNN
+	1    8400 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 60413B86
+P 8400 2900
+F 0 "#PWR015" H 8400 2650 50  0001 C CNN
+F 1 "GND" H 8405 2727 50  0000 C CNN
+F 2 "" H 8400 2900 50  0001 C CNN
+F 3 "" H 8400 2900 50  0001 C CNN
+	1    8400 2900
+	1    0    0    -1  
+$EndComp
+Text GLabel 8400 2050 1    50   Input ~ 0
+TX2
+Wire Wire Line
+	8400 2300 8400 2050
+Text Notes 9000 2950 0    50   ~ 0
+.tran 1n 4u
+Wire Notes Line
+	7200 1650 10250 1650
+Wire Notes Line
+	10250 1650 10250 3600
+Wire Notes Line
+	10250 3600 7200 3600
+Wire Notes Line
+	7200 3600 7200 1650
+Text Notes 8150 1750 0    50   ~ 0
+SPICE simulation only
+Text Notes 7900 3550 0    50   ~ 0
+Note: only the TX2 circuit is simulated in ngspice.
+Wire Wire Line
+	3350 1900 3350 2100
+Wire Wire Line
+	3400 4500 3400 4650
+Text GLabel 1400 3000 0    50   Input ~ 0
+RX2
+Text GLabel 4700 2950 0    50   Input ~ 0
+TX2
+Text GLabel 3850 2100 2    50   Output ~ 0
+RX2
+Text GLabel 4750 5750 0    50   Input ~ 0
+TX1
+Text GLabel 3800 4650 2    50   Output ~ 0
+RX1
+Wire Wire Line
+	3850 2100 3350 2100
+Connection ~ 3350 2100
+Wire Wire Line
+	3350 2100 3350 2200
+Wire Wire Line
+	4700 2950 4950 2950
+Wire Wire Line
+	4750 5750 5000 5750
+Wire Wire Line
+	3800 4650 3400 4650
+Connection ~ 3400 4650
+Wire Wire Line
+	3400 4650 3400 4800
+$Comp
+L Device:R_Small_US R2
+U 1 1 603AC095
+P 6000 2050
+F 0 "R2" H 6068 2096 50  0000 L CNN
+F 1 "100" H 6068 2005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6000 2050 50  0001 C CNN
+F 3 "~" H 6000 2050 50  0001 C CNN
+	1    6000 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 603AD435
+P 6000 2450
+F 0 "D1" V 6039 2332 50  0000 R CNN
+F 1 "APTD3216F3C-P22" V 5948 2332 50  0000 R CNN
+F 2 "opticalport:LED_Kingbright_APTD3216" H 6000 2450 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6000 2450 50  0001 C CNN
+F 4 "D" H 6000 2450 50  0001 C CNN "Spice_Primitive"
+F 5 "APTD3216SF4C-P22" H 6000 2450 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6000 2450 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/APTD3216SF4C-P22.lib" H 6000 2450 50  0001 C CNN "Spice_Lib_File"
+F 8 "2,1" H 6000 2450 50  0001 C CNN "Spice_Node_Sequence"
+	1    6000 2450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6000 3150 6000 3300
+$Comp
+L power:GND #PWR06
+U 1 1 603BF65D
+P 6000 3300
+F 0 "#PWR06" H 6000 3050 50  0001 C CNN
+F 1 "GND" H 6005 3127 50  0000 C CNN
+F 2 "" H 6000 3300 50  0001 C CNN
+F 3 "" H 6000 3300 50  0001 C CNN
+	1    6000 3300
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
