@@ -14,22 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Transistor_BJT:BC817 Q2
-U 1 1 603A974A
-P 6350 2000
-F 0 "Q2" H 6541 2046 50  0000 L CNN
-F 1 "BC817" H 6541 1955 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 6550 1925 50  0001 L CIN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BC817_SER.pdf" H 6350 2000 50  0001 L CNN
-F 4 "X" H 6350 2000 50  0001 C CNN "Spice_Primitive"
-F 5 "BC817-40" H 6350 2000 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 6350 2000 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "/home/ejb/spice_models/BC817-40.lib" H 6350 2000 50  0001 C CNN "Spice_Lib_File"
-F 8 "3,1,2" H 6350 2000 50  0001 C CNN "Spice_Node_Sequence"
-	1    6350 2000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R_Small_US R1
 U 1 1 603AE044
 P 3300 1300
@@ -58,10 +42,6 @@ F 7 "N" H 3200 1900 50  0001 C CNN "Spice_Netlist_Enabled"
 	1    3200 1900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6450 2700 6450 2850
-Wire Wire Line
-	6450 3150 6450 3300
 $Comp
 L power:GND #PWR05
 U 1 1 603BE0D5
@@ -71,17 +51,6 @@ F 1 "GND" H 3305 2027 50  0000 C CNN
 F 2 "" H 3300 2200 50  0001 C CNN
 F 3 "" H 3300 2200 50  0001 C CNN
 	1    3300 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR03
-U 1 1 603BF9A7
-P 6450 1300
-F 0 "#PWR03" H 6450 1150 50  0001 C CNN
-F 1 "+3V3" H 6465 1473 50  0000 C CNN
-F 2 "" H 6450 1300 50  0001 C CNN
-F 3 "" H 6450 1300 50  0001 C CNN
-	1    6450 1300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -228,7 +197,7 @@ F 3 "~" H 1600 3100 50  0001 C CNN
 F 4 "V" H 1600 3100 50  0001 C CNN "Spice_Primitive"
 F 5 "dc 3.3" H 1600 3100 50  0001 C CNN "Spice_Model"
 F 6 "Y" H 1600 3100 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "2,5" H 1600 3100 50  0001 C CNN "Spice_Node_Sequence"
+F 7 "6,5" H 1600 3100 50  0001 C CNN "Spice_Node_Sequence"
 	1    1600 3100
 	1    0    0    -1  
 $EndComp
@@ -260,8 +229,6 @@ F 3 "" H 8550 1950 50  0001 C CNN
 	1    8550 1950
 	1    0    0    -1  
 $EndComp
-Text GLabel 8550 1100 1    50   Input ~ 0
-TX2
 Wire Wire Line
 	8550 1350 8550 1100
 Text Notes 9150 2000 0    50   ~ 0
@@ -277,15 +244,13 @@ Wire Notes Line
 Text Notes 8300 800  0    50   ~ 0
 SPICE simulation only
 Text Notes 8050 2600 0    50   ~ 0
-Note: only the TX2 circuit is simulated in ngspice.
+Note: only the TX1 circuit is simulated in ngspice.
 Wire Wire Line
 	3300 1400 3300 1600
 Wire Wire Line
 	3400 4500 3400 4650
 Text GLabel 1400 3000 0    50   Input ~ 0
 RX2
-Text GLabel 4850 2400 0    50   Input ~ 0
-TX1
 Text GLabel 3800 1600 2    50   Output ~ 0
 RX1
 Text GLabel 3800 4650 2    50   Output ~ 0
@@ -302,46 +267,6 @@ Wire Wire Line
 Connection ~ 3400 4650
 Wire Wire Line
 	3400 4650 3400 4800
-$Comp
-L Device:R_Small_US R4
-U 1 1 603AC095
-P 6450 2600
-F 0 "R4" H 6518 2646 50  0000 L CNN
-F 1 "91" H 6518 2555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 6450 2600 50  0001 C CNN
-F 3 "~" H 6450 2600 50  0001 C CNN
-	1    6450 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D1
-U 1 1 603AD435
-P 6450 3000
-F 0 "D1" V 6489 2882 50  0000 R CNN
-F 1 "APTD3216F3C-P22" V 6398 2882 50  0000 R CNN
-F 2 "Optopod:LED_Kingbright_APTD3216" H 6450 3000 50  0001 C CNN
-F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6450 3000 50  0001 C CNN
-F 4 "D" H 6450 3000 50  0001 C CNN "Spice_Primitive"
-F 5 "APTD3216SF4C-P22" H 6450 3000 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 6450 3000 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "/home/ejb/spice_models/APTD3216SF4C-P22.lib" H 6450 3000 50  0001 C CNN "Spice_Lib_File"
-F 8 "2,1" H 6450 3000 50  0001 C CNN "Spice_Node_Sequence"
-	1    6450 3000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GND #PWR09
-U 1 1 603BF65D
-P 6450 3300
-F 0 "#PWR09" H 6450 3050 50  0001 C CNN
-F 1 "GND" H 6455 3127 50  0000 C CNN
-F 2 "" H 6450 3300 50  0001 C CNN
-F 3 "" H 6450 3300 50  0001 C CNN
-	1    6450 3300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6450 2200 6450 2500
 $Comp
 L Transistor_BJT:BC817 Q3
 U 1 1 605DB7EE
@@ -394,11 +319,6 @@ $EndComp
 Wire Wire Line
 	5800 2800 5800 2600
 Wire Wire Line
-	5800 2200 5800 2000
-Connection ~ 5800 2000
-Wire Wire Line
-	5800 2000 5800 1800
-Wire Wire Line
 	5500 2400 5400 2400
 $Comp
 L power:+3V3 #PWR02
@@ -442,10 +362,6 @@ Wire Wire Line
 Connection ~ 5400 2400
 Wire Wire Line
 	5400 2400 5300 2400
-Wire Wire Line
-	6450 1300 6450 1800
-Wire Wire Line
-	5800 2000 6150 2000
 $Comp
 L Transistor_BJT:BC817 Q4
 U 1 1 6063BC60
@@ -640,4 +556,88 @@ F 3 "" H 2350 2900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1900 3200 2350 3200
+Wire Wire Line
+	5800 2000 5800 1800
+Wire Wire Line
+	5800 2200 5800 2000
+Connection ~ 5800 2000
+Wire Wire Line
+	5800 2000 6150 2000
+Wire Wire Line
+	6450 1300 6450 1800
+Wire Wire Line
+	6450 2200 6450 2500
+$Comp
+L power:GND #PWR09
+U 1 1 603BF65D
+P 6450 3300
+F 0 "#PWR09" H 6450 3050 50  0001 C CNN
+F 1 "GND" H 6455 3127 50  0000 C CNN
+F 2 "" H 6450 3300 50  0001 C CNN
+F 3 "" H 6450 3300 50  0001 C CNN
+	1    6450 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 603AD435
+P 6450 3000
+F 0 "D1" V 6489 2882 50  0000 R CNN
+F 1 "APTD3216F3C-P22" V 6398 2882 50  0000 R CNN
+F 2 "Optopod:LED_Kingbright_APTD3216" H 6450 3000 50  0001 C CNN
+F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6450 3000 50  0001 C CNN
+F 4 "D" H 6450 3000 50  0001 C CNN "Spice_Primitive"
+F 5 "APTD3216SF4C-P22" H 6450 3000 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6450 3000 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/APTD3216SF4C-P22.lib" H 6450 3000 50  0001 C CNN "Spice_Lib_File"
+F 8 "2,1" H 6450 3000 50  0001 C CNN "Spice_Node_Sequence"
+	1    6450 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small_US R4
+U 1 1 603AC095
+P 6450 2600
+F 0 "R4" H 6518 2646 50  0000 L CNN
+F 1 "91" H 6518 2555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6450 2600 50  0001 C CNN
+F 3 "~" H 6450 2600 50  0001 C CNN
+	1    6450 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR03
+U 1 1 603BF9A7
+P 6450 1300
+F 0 "#PWR03" H 6450 1150 50  0001 C CNN
+F 1 "+3V3" H 6465 1473 50  0000 C CNN
+F 2 "" H 6450 1300 50  0001 C CNN
+F 3 "" H 6450 1300 50  0001 C CNN
+	1    6450 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 3150 6450 3300
+Wire Wire Line
+	6450 2700 6450 2850
+$Comp
+L Transistor_BJT:BC817 Q2
+U 1 1 603A974A
+P 6350 2000
+F 0 "Q2" H 6541 2046 50  0000 L CNN
+F 1 "BC817" H 6541 1955 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6550 1925 50  0001 L CIN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BC817_SER.pdf" H 6350 2000 50  0001 L CNN
+F 4 "X" H 6350 2000 50  0001 C CNN "Spice_Primitive"
+F 5 "BC817-40" H 6350 2000 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6350 2000 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/ejb/spice_models/BC817-40.lib" H 6350 2000 50  0001 C CNN "Spice_Lib_File"
+F 8 "3,1,2" H 6350 2000 50  0001 C CNN "Spice_Node_Sequence"
+	1    6350 2000
+	1    0    0    -1  
+$EndComp
+Text GLabel 8550 1100 1    50   Input ~ 0
+TX1
+Text GLabel 4850 2400 0    50   Input ~ 0
+TX1
 $EndSCHEMATC
