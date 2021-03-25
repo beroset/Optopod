@@ -1,4 +1,4 @@
-update=Thu 25 Mar 2021 12:00:24 PM EDT
+update=Thu 25 Mar 2021 02:22:07 PM EDT
 version=1
 last_client=kicad
 [general]
@@ -12,6 +12,16 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=images/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Spice
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -56,7 +66,7 @@ OthersTextItalic=0
 OthersTextUpright=1
 SolderMaskClearance=0
 SolderMaskMinWidth=0
-SolderPasteClearance=0
+SolderPasteClearance=-0.06
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
@@ -236,13 +246,3 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=images/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Spice
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1
