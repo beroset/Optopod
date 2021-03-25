@@ -1,0 +1,9 @@
+from: markdown
+to: pdf
+
+standalone: true
+self-contained: true
+
+variables:
+  linkcolor: blue 
+  geometry: margin=1.00in 
