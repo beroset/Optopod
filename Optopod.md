@@ -65,6 +65,6 @@ The receiver characteristics mirror the transmitter characteristics in that inst
 ### Board design
 As mentioned earlier, the board actually has two separate transmit circuits and two separate receive circuits so that the board may be used *between* an optical probe and meter to allow it to "listen in" on the conversation between, say, proprietary programming software and a meter.  For simplicity in manufacturing all of the surface mount parts are mounted on the front except for one of the IR diode/phototransistor pairs, designated D1 and Q1 on the schematic.  The rendered version of the final board is shown in Figure 4.
 
-![3D-rendered board](opticalport/images/opticalport_front.png)
+![3D-rendered board](Optopod/images/opticalport_front.png)
 
 
