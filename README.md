@@ -33,3 +33,4 @@ Table: Bill of materials
 
 ![3D-rendered board](Optopod/images/opticalport_front.png)
 
+![schematic](Optopod/images/opticalport.svg)

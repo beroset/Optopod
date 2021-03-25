@@ -1,4 +1,4 @@
-update=Tue 23 Mar 2021 05:26:06 PM EDT
+update=Thu 25 Mar 2021 12:00:24 PM EDT
 version=1
 last_client=kicad
 [general]
@@ -239,7 +239,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=images/schematic.svg
+PlotDirectoryName=images/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Spice
