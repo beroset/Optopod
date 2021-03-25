@@ -1,7 +1,3 @@
-% Optopod Design
-% E. Beroset
-% 28 February 2021
-
 # Purpose
 The purpose for the Optopod is to allow a Raspberry Pi or other small microcontroller to communicate with a meter using either the ANSI C12.18 or IEC 62056-21 communications standard.  Both standards use a very simple infrared (IR) optical communications protocol and the physical attributes of the port are nearly identical.  In particular, there are only two significant differences:  the IEC protocol has the transmit on the right and receive on the left with a round port, while the ANSI protocol has the transmit on the left and receive on the right with a flat at the bottom of the otherwise round port.  The IEC version is shown in Figure 1.
 
@@ -19,14 +15,11 @@ The optical specifications are derived from both the the IEC and ANSI standards.
 
 The transmit power is specified for a 5 mm diameter spot directly in front of the transmitter and at 10 mm and 25 mm distances for both on and off conditions.  The numbers are slightly different for the ANSI and IEC versions of the specification as shown in Table 1.
 
-+---------+--------------------+----------------------+-----------------------+--------------------+
-|distance | IEC ON power       | IEC OFF power        | ANSI ON power         | ANSI OFF power     |
-|(mm)     | ($\text{mW/cm}^3$) | ($\text{mW/cm}^3$)   | ($\text{mW/cm}^3$)    | ($\text{mW/cm}^3$) |
-+=========+====================+======================+=======================+====================+
-|10       | $0.5 \le x \le 5$  | $x \le 0.01$         |  $1 < x < 7.5$        |    $x < 0.01$      |
-+---------+--------------------+----------------------+-----------------------+--------------------+
-|25       | no spec            |  no spec             |  $1 < x < 7.5$        |    $x < 0.01$      |
-+---------+--------------------+----------------------+-----------------------+--------------------+
+distance | IEC ON power       | IEC OFF power        | ANSI ON power         | ANSI OFF power
+(mm)     | (\$\text{mW/cm}^3\$) | (\$\text{mW/cm}^3\$)   | (\$\text{mW/cm}^3\$)    | (\$\text{mW/cm}^3\$)
+---------|--------------------|----------------------|-----------------------|--------------------
+10       | \$0.5 \le x \le 5\$  | \$x \le 0.01\$         |  \$1 < x < 7.5\$        |    \$x < 0.01\$
+25       | no spec            |  no spec             |  \$1 < x < 7.5\$        |    \$x < 0.01\$
 
 Table: Optical specifications for transmitter
 
@@ -77,7 +70,7 @@ As mentioned earlier, the board actually has two separate transmit circuits and 
  8   | 2   |R4, R9         |0402 SMD resistor 91                      |$0.019  |$0.04
  9   | 2   |R5, R10        |0402 SMD resistor 1.5K                    |$0.019  |$0.04
  10  | 1   |board          |Custom PCB                                |$1.550  |$1.55
-     |     ||              | **TOTAL**                                |        |**$2.62**
+     |     |               | **TOTAL**                                |        |**$2.62**
 
 Table: Bill of materials
 
