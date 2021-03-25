@@ -4,8 +4,8 @@ EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
-Title "Opticalport"
-Date "2021-03-23"
+Title "Optopod"
+Date "2021-03-25"
 Rev "1.0"
 Comp "E. Beroset"
 Comment1 ""
@@ -49,7 +49,7 @@ U 1 1 603AFAFC
 P 3200 1900
 F 0 "Q1" H 3390 1946 50  0000 L CNN
 F 1 "APTD3216P3C-P22" H 3390 1855 50  0000 L CNN
-F 2 "opticalport:LED_Kingbright_APTD3216" H 3400 2000 50  0001 C CNN
+F 2 "Optopod:LED_Kingbright_APTD3216" H 3400 2000 50  0001 C CNN
 F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216P3C-P22.pdf" H 3200 1900 50  0001 C CNN
 F 4 "/home/ejb/spice_models/APTD3216P3C-P22.lib" H 3200 1900 50  0001 C CNN "Spice_Lib_File"
 F 5 "APTD3216P3C-P22" H 3200 1900 50  0001 C CNN "Spice_Model"
@@ -130,7 +130,7 @@ U 1 1 603E4054
 P 3300 5000
 F 0 "Q5" H 3490 5046 50  0000 L CNN
 F 1 "APTD3216P3C-P22" H 3490 4955 50  0000 L CNN
-F 2 "opticalport:LED_Kingbright_APTD3216" H 3500 5100 50  0001 C CNN
+F 2 "Optopod:LED_Kingbright_APTD3216" H 3500 5100 50  0001 C CNN
 F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216P3C-P22.pdf" H 3300 5000 50  0001 C CNN
 F 4 "/home/ejb/spice_models/APTD3216P3C-P22.lib" H 3300 5000 50  0001 C CNN "Spice_Lib_File"
 F 5 "APTD3216P3C-P22" H 3300 5000 50  0001 C CNN "Spice_Model"
@@ -319,7 +319,7 @@ U 1 1 603AD435
 P 6450 3000
 F 0 "D1" V 6489 2882 50  0000 R CNN
 F 1 "APTD3216F3C-P22" V 6398 2882 50  0000 R CNN
-F 2 "opticalport:LED_Kingbright_APTD3216" H 6450 3000 50  0001 C CNN
+F 2 "Optopod:LED_Kingbright_APTD3216" H 6450 3000 50  0001 C CNN
 F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6450 3000 50  0001 C CNN
 F 4 "D" H 6450 3000 50  0001 C CNN "Spice_Primitive"
 F 5 "APTD3216SF4C-P22" H 6450 3000 50  0001 C CNN "Spice_Model"
@@ -498,7 +498,7 @@ U 1 1 6063BEE7
 P 6900 5850
 F 0 "D2" V 6939 5732 50  0000 R CNN
 F 1 "APTD3216F3C-P22" V 6848 5732 50  0000 R CNN
-F 2 "opticalport:LED_Kingbright_APTD3216" H 6900 5850 50  0001 C CNN
+F 2 "Optopod:LED_Kingbright_APTD3216" H 6900 5850 50  0001 C CNN
 F 3 "https://www.kingbrightusa.com/images/catalog/SPEC/APTD3216F3C-P22.pdf" H 6900 5850 50  0001 C CNN
 F 4 "D" H 6900 5850 50  0001 C CNN "Spice_Primitive"
 F 5 "APTD3216SF4C-P22" H 6900 5850 50  0001 C CNN "Spice_Model"
