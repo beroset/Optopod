@@ -8,50 +8,7 @@ In addition to simply operating as a probe, the circuit will also have an interc
 # Design overview
 The board is intended to be driven from a 3.3V power supply and communications.  The serial RX and TX lines of a Raspberry Pi will be used to receive/transmit via the optical port circuits on opposite sides of the board.  A six-pin connector will be used for +3.3V, GND, RX1, TX1, RX2 and TX2 lines.   To make the assembly as simple as possible, only the IR LED and IR phototransistor will be on the opposite side of the board.  All other parts will be on the front of the board, allowing reflow soldering of all but those two parts.
 
-## Optical specification
-The optical specifications are derived from both the the IEC and ANSI standards.  The wavelength is specified as from 800 nm to 1000 nm, which is quite wide, while most IR diodes and phototransistors have a narrow peak.  In doing some research into currently commercially available probes and meters, it appears that 880 nm is widely used and is conveniently near the middle of the specified range, so this design uses 880 nm devices.
-
-### Transmitter characteristics
-
-The transmit power is specified for a 5 mm diameter spot directly in front of the transmitter and at 10 mm and 25 mm distances for both on and off conditions.  The numbers are slightly different for the ANSI and IEC versions of the specification as shown in Table 1.
-
-distance | IEC ON power       | IEC OFF power        | ANSI ON power         | ANSI OFF power
-(mm)     | (\$\text{mW/cm}^3\$) | (\$\text{mW/cm}^3\$)   | (\$\text{mW/cm}^3\$)    | (\$\text{mW/cm}^3\$)
----------|--------------------|----------------------|-----------------------|--------------------
-10       | \$0.5 \le x \le 5\$  | \$x \le 0.01\$         |  \$1 < x < 7.5\$        |    \$x < 0.01\$
-25       | no spec            |  no spec             |  \$1 < x < 7.5\$        |    \$x < 0.01\$
-
-Table: Optical specifications for transmitter
-
-Because these measurements are in $\text{mW/cm}^2$, but output specifications for IR LEDs is typically in mW/sr we need to convert.  Because we have the dimension of the test setup from the standards as mentioned above, we can calculate the size of the target in steradians by dividing the area of the target by the distance to it:
-
-$$ \text{sr} = \frac{A_{\text{target}}}{d} = \frac{\pi r^2}{d} $$
-
-So for the two distances specified in the ANSI standard we have
-
-$$ \frac{\pi (2.5\text{mm})^2}{10\text{mm}} = 1.963 \text{sr} $$
-
-$$ \frac{\pi (2.5\text{mm})^2}{25\text{mm}} = 0.785 \text{sr} $$
-
-To convert from the specified values in $\text{mW/cm}^3$ to mW/sr, we simply divide the power values by these two calculated steradians values.
-
-+---------+---------------------+----------------------+-----------------------+--------------------+
-|distance | IEC ON power        | IEC OFF power        | ANSI ON power         | ANSI OFF power     |
-|(mm)     | (mW/sr)             | (mW/sr)              | (mW/sr)               | (mW/sr)            |
-+=========+=====================+======================+=======================+====================+
-|10       |$0.25 \le x\le 2.5$  | $x \le 0.005$        |  $0.5 < x < 3.82$     |    $x < 0.005$     |
-+---------+---------------------+----------------------+-----------------------+--------------------+
-|25       | no spec             |  no spec             |$1.27 < x < 9.55$      |    $x < 0.0127$    |
-+---------+---------------------+----------------------+-----------------------+--------------------+
-
-Table: Desired optical characteristics for transmitter
-
-Given these different values, an IR LED with a power specification of from 1.27 to 2.5 mW/sr should work and meet all specifications.  This is easily met by the Kingbright APTD3216SF4C-P22 GaAlAs LED which is specified to have an output power at least 1.6 mW/sr and a typical value of 4 mW/sr at 20mA.  This particular IR LED has a 40 degree viewing angle, so should easily be able to illuminate the corresponding receiver.  Because the output power is proportional to the current, we will have to drive the part with a maximum of 20 mA to meet the specification.  Since few microprocessor pins can sink that much current, we can use a simple common emitter transistor as an output transistor to boost the current and another input transistor to invert the sense (ON means zero for both ANSI and IEC specifications).  The BC817-40 is an NPN bipolar junction transistor (BJT) in a SOT23 package that should work nicely for this purpose.  For the output transistor, $V_{CE(SAT)} = 0.024\text{V} @ I_C = 20\text{mA}$, and because the forward voltage of the diode is typically 1.3V (and max 1.6V), we can calculate the load resistor $(3.3 - 1.3 - 0.024)\text{V}/20\text{mA} = 98.8\Omega$, so we can use the next lowest standard value, $91\Omega$.  SPICE modeling has confirmed this value and others for the two-transistor circuit for the transmitter.  Specifically, a $5.1k\Omega$ series base resistor and $1.5k\Omega$ resistor for a divider, and a $330\Omega$ pull up on the collector of the input transistor. The collector of the input transistor connects directly to the base of the output transistor and the output transistor collector is tied directly to 3.3V.  The $91\Omega$ resistor and IR diode are in series between the output transistor's emitter and ground.  The transmit circuit is shown in Figure 2.
-
 ![Transmit circuit](Optopod/images/transmit.png)
-
-### Receiver characteristics
-The receiver characteristics mirror the transmitter characteristics in that instead of the on and off producing a particular light output, the light input values are specified to produce either on or off as outputs.  The Kingbright APTD3216P3C-P22 phototransistor has the same size package and lens as the IR LED mentioned above and appears to meet all of the characteristics needed, although its peak sensitivity is a bit higher, at a wavelength of 940 nm.  Because the receiver sensitivity is broader than the transmitter sensitivity, this does not cause a problem; the sensitivity at 880 nm is around 95% of the sensitivity at 940 nm.  Because $V_{CE(SAT)} = 0.8\text{V}$ max for this phototransistor and the typical $I_{C(ON)} = 1\text{mA}$, we can calculate the series resistor $(3.3\text{V}-0.8\text{V})/(1\text{mA}) = 2500\Omega \approx 2.2k\Omega$.  The receive circuit is shown in Figure 3.
 
 ![Receive circuit](Optopod/images/receive.png)
 
@@ -75,5 +32,4 @@ As mentioned earlier, the board actually has two separate transmit circuits and 
 Table: Bill of materials
 
 ![3D-rendered board](Optopod/images/opticalport_front.png)
-
 
