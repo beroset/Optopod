@@ -8,12 +8,14 @@ In addition to simply operating as a probe, the circuit will also have an interc
 # Design overview
 The board is intended to be driven from a 3.3V power supply and communications.  The serial RX and TX lines of a Raspberry Pi will be used to receive/transmit via the optical port circuits on opposite sides of the board.  A six-pin connector will be used for +3.3V, GND, RX1, TX1, RX2 and TX2 lines.   To make the assembly as simple as possible, only the IR LED and IR phototransistor will be on the opposite side of the board.  All other parts will be on the front of the board, allowing reflow soldering of all but those two parts.
 
+## Transmit circuit
 ![Transmit circuit](Optopod/images/transmit.png)
 
+## Receive circuit
 ![Receive circuit](Optopod/images/receive.png)
 
 ### Board design
-As mentioned earlier, the board actually has two separate transmit circuits and two separate receive circuits so that the board may be used *between* an optical probe and meter to allow it to "listen in" on the conversation between, say, proprietary programming software and a meter.  For simplicity in manufacturing all of the surface mount parts are mounted on the front except for one of the IR diode/phototransistor pairs, designated D1 and Q1 on the schematic.  The bill of materials is in Table 3 and the rendered version of the final board is shown in Figure 4.
+As mentioned earlier, the board actually has two separate transmit circuits and two separate receive circuits so that the board may be used *between* an optical probe and meter to allow it to "listen in" on the conversation between, say, proprietary programming software and a meter.  For simplicity in manufacturing all of the surface mount parts are mounted on the front except for one of the IR diode/phototransistor pairs, designated D1 and Q1 on the schematic.  The bill of materials shown in the table below.  The total cost is $2.62.
 
  Item| Qty | Reference(s)  |    Value                                 | Price  |Ext Total
 -----|-----|---------------|------------------------------------------|--------|----------
@@ -27,10 +29,9 @@ As mentioned earlier, the board actually has two separate transmit circuits and 
  8   | 2   |R4, R9         |0402 SMD resistor 91                      |$0.019  |$0.04
  9   | 2   |R5, R10        |0402 SMD resistor 1.5K                    |$0.019  |$0.04
  10  | 1   |board          |Custom PCB                                |$1.550  |$1.55
-     |     |               | **TOTAL**                                |        |**$2.62**
 
-Table: Bill of materials
-
+### Rendered board image
 ![3D-rendered board](Optopod/images/opticalport_front.png)
 
+### Schematic
 ![schematic](Optopod/images/opticalport.svg)
