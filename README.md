@@ -31,7 +31,7 @@ As mentioned earlier, the board actually has two separate transmit circuits and 
  10  | 1   |board          |Custom PCB                                |$1.550  |$1.55
 
 ### Rendered board image
-![3D-rendered board](Optopod/images/opticalport_front.png)
+![3D-rendered board](Optopod/images/Optopod_front.png)
 
 ### Schematic
-![schematic](Optopod/images/opticalport.svg)
+![schematic](Optopod/images/Optopod.svg)

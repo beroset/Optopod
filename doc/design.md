@@ -77,6 +77,6 @@ As mentioned earlier, the board actually has two separate transmit circuits and 
 
 Table: Bill of materials
 
-![3D-rendered board](Optopod/images/opticalport_front.png)
+![3D-rendered board](Optopod/images/Optopod_front.png)
 
 
